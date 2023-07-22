@@ -3,25 +3,30 @@
 @tailwind utilities;
 
 :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+  scroll-behavior: smooth;
 }
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+body{
+  background-color: aliceblue;
 }
-
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+.marked{
+  position: relative;
+  z-index: 1;
+}
+.marked::after{
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 80%;
+  background-color: rgb(137, 164, 238);
+  z-index: -1;
+  left: 0px;
+  top: 10px;
+  border-radius: 61% 39% 76% 24% / 75% 18% 82% 45% ;
+  -webkit-border-radius: 61% 39% 76% 24% / 75% 18% 82% 45% ;
+  -moz-border-radius: 61% 39% 76% 24% / 75% 18% 82% 45% ;
+  -ms-border-radius: 61% 39% 76% 24% / 75% 18% 82% 45% ;
+  -o-border-radius: 61% 39% 76% 24% / 75% 18% 82% 45% ;
+}
+.logo{
+  font-family: 'Noto Sans JP';
 }
