@@ -45,21 +45,21 @@ async function getProject(id :string) : Promise<Project> {
     { id }
   );
 }
-async function getPage(id :string) : Promise<Page> {
+async function getPage(slug :string) : Promise<Page> {
   return createClient({
     projectId:"42h6u44a",
     apiVersion:"2023-07-19",
     dataset:"production"
   }).fetch( 
-    groq`*[_type == "page" && _id == $id][0]
+    groq`*[_type == "page" && slug.current == $slug][0]
     {
       _id,
       _createdAt,
       title,
       "slug":slug.current,
-      content:
+      content
     }`,
-    { id }
+    { slug }
   );
 }
 async function getPages() : Promise<Page[]> {
