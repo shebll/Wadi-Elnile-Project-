@@ -1,13 +1,13 @@
 import '../globals.css'
 import Header from "@/components/header";
 import type { Metadata } from 'next'
-import { Cairo } from 'next/font/google'
+import { Inter } from 'next/font/google'
 
-const inter = Cairo({ subsets: ['latin'] })
+const inter = Inter({ subsets: ['latin'] })
 
 
 export const metadata: Metadata = {
-  title: 'BlOGS',
+  title: 'Bala',
   description: 'personal blogs website && show and share project',
   icons: {
     icon: '/logo.png',

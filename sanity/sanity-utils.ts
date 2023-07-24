@@ -24,13 +24,13 @@ async function getProjects() : Promise<Project[]> {
   
   
 /* fetching data using groq specific projects */
-async function getProject(slug :string) : Promise<Project> {
+async function getProject(id :string) : Promise<Project> {
   return createClient({
     projectId:"42h6u44a",
     apiVersion:"2023-07-19",
     dataset:"production"
   }).fetch( 
-    groq`*[_type == "project" && slug.current == $slug][0]
+    groq`*[_type == "project" && _id == $id][0]
     {
       _id,
       _createdAt,
@@ -40,7 +40,7 @@ async function getProject(slug :string) : Promise<Project> {
       url,
       content
     }`,
-    { slug }
+    { id }
   );
 }
 
