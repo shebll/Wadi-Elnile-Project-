@@ -10,16 +10,17 @@ type props = {
 export default function Images({ product }: props) {
   return (
     <div className="w-full">
-      {product.secImages.map((image, index) => (
-        <Image
-          key={index}
-          src={builder.image(image.asset).url()}
-          alt="image"
-          width={1050}
-          height={550}
-          className=""
-        />
-      ))}
+      {product.secImages &&
+        product.secImages.map((image, index) => (
+          <Image
+            key={index}
+            src={builder.image(image.asset).url()}
+            alt="image"
+            width={1050}
+            height={550}
+            className=""
+          />
+        ))}
     </div>
   );
 }

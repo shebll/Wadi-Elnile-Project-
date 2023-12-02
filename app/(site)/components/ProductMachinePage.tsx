@@ -26,7 +26,7 @@ function ProductMachinePage({ product }: props) {
       </div>
       <div className="flex flex-col gap-4">
         <Link
-          href={product.url}
+          href={product.url || "/"}
           target="_blank"
           rel="noopener noreferrer"
           className="bg-red-700 text-white px-3 py-2 text-center rounded-[30px] flex-1 text-lg font-semibold"
