@@ -1,6 +1,5 @@
-import Page from "./page";
-import Project from "./porjects";
+import blockContent from "./blockContent";
+import Product from "./product";
+import Machine from "./Machine";
 
-const schemas =[Project , Page]
-
-export default schemas
+export const schemaTypes = [Product, blockContent, Machine];

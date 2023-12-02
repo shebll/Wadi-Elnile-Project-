@@ -1,81 +1,117 @@
-import Page from "@/types/Pages";
-import Project from "@/types/Projects"
-import {createClient, groq} from "next-sanity"
-
-
+import { createClient, groq } from "next-sanity";
+import ProductMachineType from "@/types/Product";
 
 /* fetching data using groq all projects */
-async function getProjects() : Promise<Project[]> {
+async function getProducts(): Promise<ProductMachineType[]> {
   return createClient({
-    projectId:"42h6u44a",
-    apiVersion:"2023-07-19",
-    dataset:"production"
-  }).fetch( 
-    groq`*[_type=="project"]
+    projectId: "42h6u44a",
+    apiVersion: "2023-07-19",
+    dataset: "production",
+  }).fetch(
+    groq`*[_type=="Product"]
     {
       _id,
       _createdAt,
       name,
-      "slug":slug.current,
-      "image" : image.asset->url,
+      "mainImage" : mainImage.asset->url,
+      secImages,
       url,
-      content
+      content,
+      features,
+      category,
+      description,
     }`
-    )
-  }
-  
-  
+  );
+}
+
 /* fetching data using groq specific projects */
-async function getProject(id :string) : Promise<Project> {
+async function getProduct(id: string): Promise<ProductMachineType> {
   return createClient({
-    projectId:"42h6u44a",
-    apiVersion:"2023-07-19",
-    dataset:"production"
-  }).fetch( 
-    groq`*[_type == "project" && _id == $id][0]
+    projectId: "42h6u44a",
+    apiVersion: "2023-07-19",
+    dataset: "production",
+  }).fetch(
+    groq`*[_type == "Product" && _id == $id][0]
     {
       _id,
       _createdAt,
       name,
-      "slug":slug.current,
-      "image" : image.asset->url,
+      "mainImage" : mainImage.asset->url,
+      secImages,
       url,
-      content
+      content,
+      features,
+      description,
+      category,
     }`,
     { id }
   );
 }
-async function getPage(slug :string) : Promise<Page> {
+async function getMachines(): Promise<ProductMachineType[]> {
   return createClient({
-    projectId:"42h6u44a",
-    apiVersion:"2023-07-19",
-    dataset:"production"
-  }).fetch( 
-    groq`*[_type == "page" && slug.current == $slug][0]
+    projectId: "42h6u44a",
+    apiVersion: "2023-07-19",
+    dataset: "production",
+  }).fetch(
+    groq`*[_type=="Machine"]
     {
       _id,
       _createdAt,
-      title,
-      "slug":slug.current,
-      content
-    }`,
-    { slug }
-  );
-}
-async function getPages() : Promise<Page[]> {
-  return createClient({
-    projectId:"42h6u44a",
-    apiVersion:"2023-07-19",
-    dataset:"production"
-  }).fetch( 
-    groq`*[_type == "page"]
-    {
-      _id,
-      _createdAt,
-      title,
-      "slug":slug.current,
+      name,
+      "mainImage" : mainImage.asset->url,
+      secImages,
+      url,
+      content,
+      features,
+      category,
+      description,
     }`
   );
 }
 
-export  {getProject ,getProjects ,getPages ,getPage}
+/* fetching data using groq specific projects */
+async function getMachine(id: string): Promise<ProductMachineType> {
+  return createClient({
+    projectId: "42h6u44a",
+    apiVersion: "2023-07-19",
+    dataset: "production",
+  }).fetch(
+    groq`*[_type == "Machine" && _id == $id][0]
+    {
+      _id,
+      _createdAt,
+      name,
+      "mainImage" : mainImage.asset->url,
+      secImages,
+      url,
+      content,
+      features,
+      description,
+      category,
+    }`,
+    { id }
+  );
+}
+async function getByName(name: string): Promise<ProductMachineType[]> {
+  return createClient({
+    projectId: "42h6u44a",
+    apiVersion: "2023-07-19",
+    dataset: "production",
+  }).fetch(
+    groq`*[name match $name]
+    {
+      _id,
+      _createdAt,
+      name,
+      "mainImage" : mainImage.asset->url,
+      secImages,
+      url,
+      content,
+      features,
+      description,
+      category,
+    }`,
+    { name }
+  );
+}
+export { getProducts, getProduct, getMachines, getMachine, getByName };
