@@ -4,14 +4,14 @@ import { deskTool } from "sanity/desk";
 import { schemaTypes } from "./sanity/schemas/index";
 import imageUrlBuilder from "@sanity/image-url";
 const config = defineConfig({
-  projectId: (process.env.SANITY_PROJECT_ID as string) || "42h6u44a",
-  dataset: (process.env.SANITY_DATASET as string) || "production",
+  projectId: process.env.NEXT_PUBLIC_SANITY_PROJECT_ID as string,
+  dataset: process.env.NEXT_PUBLIC_SANITY_DATASET as string,
   title: "personal blog",
   basePath: "/admin",
   apiVersion: "2023-19-07",
   plugins: [deskTool()],
   schema: { types: schemaTypes },
-  useCdn: false,
+  useCdn: true,
 });
 export const builder = imageUrlBuilder(config);
 
