@@ -3,12 +3,13 @@ import Image from "next/image";
 import Link from "next/link";
 type props = {
   items: ProductMachineType[];
+  name: string;
 };
-async function Products({ items }: props) {
+async function Products({ items, name }: props) {
   return (
     <div className="min-h-screen flex justify-center items-center flex-col gap-6 py-[80px]">
       <h1 className="text-[40px] md:text-[80px] lg:text-[130px] font-bold text-center">
-        All Products!
+        {name}
       </h1>
       <div className="container mx-auto flex flex-col lg:flex-row justify-center items-stretch gap-8 px-4  flex-wrap">
         {items.map((item) => (
@@ -36,7 +37,12 @@ async function Products({ items }: props) {
                 </div>
                 <div className=" text-gray-500">{item.description}</div>
               </div>
-              <Link href={`/product/${item._id}`} className="btn-more">
+              <Link
+                href={`/${name.split(" ")[1].toLowerCase().slice(0, -1)}/${
+                  item._id
+                }`}
+                className="btn-more"
+              >
                 See More
               </Link>
             </div>

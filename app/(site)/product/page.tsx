@@ -8,7 +8,7 @@ async function page() {
   const products = await getProducts();
   return (
     <div>
-      <Products items={products} />
+      <Products items={products} name="All Products" />
     </div>
   );
 }

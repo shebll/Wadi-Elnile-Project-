@@ -29,7 +29,7 @@ function DropDown() {
         <div className="">
           <Link href="/">
             <Image
-              src="/wady_logo.jpeg"
+              src="/wady_logo.png"
               alt="logo image"
               loading="lazy"
               width={200}

@@ -6,7 +6,6 @@ type props = {
 };
 async function ProductPage({ params: { id } }: props) {
   const product = await getProduct(id);
-  console.log(product);
   return <ProductMachinePage product={product} />;
 }
 

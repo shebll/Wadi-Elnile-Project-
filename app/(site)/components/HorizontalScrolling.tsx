@@ -14,7 +14,7 @@ function HorizontalScrolling() {
           stiffness: 50,
           delay: 1.8,
         }}
-        className="w-full flex justify-center py-6 sm:py-10"
+        className="w-full flex justify-center py-6 sm:py-10 bg-gray-100 mt-10"
       >
         <div className="slider">
           <div className="slider-track">

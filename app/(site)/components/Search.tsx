@@ -8,7 +8,6 @@ function Search() {
   const [searchValue, setSearchValue] = useState("");
 
   function submitHandler(e: FormEvent<HTMLFormElement>) {
-    const inputValue = encodeURIComponent(searchValue);
     e.preventDefault();
     setSearchValue("");
     router.push(`/searchByName/${searchValue}`);
@@ -18,7 +17,7 @@ function Search() {
   }
   return (
     <form onSubmit={submitHandler}>
-      <div className="bg-gray-300 rounded-full flex flex-row  px-4">
+      <div className="bg-gray-200 rounded-full flex flex-row  px-4">
         <button type="submit" className="outline-none">
           <span className="flex justify-center items-center">
             <svg
@@ -54,8 +53,9 @@ function Search() {
         <input
           type="text"
           placeholder="search by name"
-          className=" bg-gray-300 rounded-full text-lg px-4 py-2 outline-none text-gray-700"
+          className=" bg-gray-200 rounded-full text-lg px-4 py-2 outline-none text-gray-700"
           onChange={changeHandler}
+          required
           value={searchValue}
         />
       </div>

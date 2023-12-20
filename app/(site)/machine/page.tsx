@@ -6,7 +6,7 @@ async function page() {
   const products = await getMachines();
   return (
     <div>
-      <Products items={products} />
+      <Products items={products} name="All Machines" />
     </div>
   );
 }

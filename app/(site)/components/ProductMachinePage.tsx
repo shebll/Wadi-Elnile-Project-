@@ -9,8 +9,8 @@ type props = {
 
 function ProductMachinePage({ product }: props) {
   return (
-    <div className="container w-[1000px] mx-auto py-20 px-[10px] flex justify-center flex-col gap-20">
-      <div className="flex justify-between items-start gap-10">
+    <div className="container max-w-[1000px] mx-auto py-20 px-[10px] flex justify-center flex-col gap-20 pt-[200px]">
+      <div className="flex justify-between items-start gap-10 flex-col md:flex-row">
         <div className="flex gap-6 flex-col">
           <h1 className="text-4xl font-bold">{product.name}</h1>
           <p className="text-lg text-gray-600">{product.description}</p>
@@ -36,14 +36,16 @@ function ProductMachinePage({ product }: props) {
         <hr />
       </div>
       <div className="flex gap-4 flex-col">
-        <h1 className="text-5xl font-bold uppercase ">Specifications</h1>
+        <h1 className="text-3xl md:text-5xl font-bold uppercase ">
+          Specifications
+        </h1>
         <hr />
         <div className="text-lg  py-4 flex flex-col gap-6">
           <PortableText value={product.content} />
         </div>
       </div>
       <div className="flex gap-4 flex-col">
-        <h1 className="text-5xl font-bold uppercase "> features</h1>
+        <h1 className="text-3xl md:text-5xl font-bold uppercase "> features</h1>
         <hr />
         <div className="text-lg  py-4 flex flex-col gap-6 ">
           <PortableText value={product.features} />
