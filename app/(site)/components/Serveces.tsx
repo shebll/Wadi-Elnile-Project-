@@ -6,7 +6,7 @@ function Services() {
     <section id="services" className="container mx-auto min-h-screen ">
       <div className="row flex flex-col pb-10">
         <h2 className="section-heading text-gray-300">Our Services</h2>
-        <p className="text-gray-900 text-center translate-y-[-50px] font-semibold">
+        <p className="text-gray-900 text-center translate-y-[-20px] lg:translate-y-[-60px] md:font-semibold text-xs md:text-base ">
           Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quisquam
         </p>
       </div>

@@ -11,7 +11,7 @@ function AllProducts() {
       >
         <div className="">
           <h1 className="section-heading text-gray-300">Products & Machines</h1>
-          <p className="text-gray-900 text-center translate-y-[-50px] font-semibold">
+          <p className="text-gray-900 text-center translate-y-[-20px] lg:translate-y-[-60px] md:font-semibold text-xs md:text-base ">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit
             aliquam
           </p>

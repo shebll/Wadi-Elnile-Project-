@@ -24,7 +24,9 @@ function Header() {
               className="object-contain "
             ></Image>
           </Link>
-          <Search />
+          <div className="hidden lg:block">
+            <Search />
+          </div>
           <nav className="hidden md:inline-flex">
             <ul className="flex gap-6 items-center">
               <li className="font-semibold text-2xl hover:text-black text-gray-700 ">
@@ -38,7 +40,7 @@ function Header() {
               </li>
             </ul>
           </nav>
-          <DropDown></DropDown>
+          <DropDown />
         </m.header>
       </div>
     </LazyMotion>

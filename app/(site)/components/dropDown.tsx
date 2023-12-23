@@ -2,6 +2,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { useState } from "react";
+import Search from "./Search";
 function DropDown() {
   const [state, setState] = useState(false);
   const handleClick = () => {
@@ -9,24 +10,51 @@ function DropDown() {
   };
   return (
     <div className="md:hidden">
-      <div className="icon" onClick={handleClick}></div>
+      <div className="pr-6" onClick={handleClick}>
+        <Image
+          src={"/menu.png"}
+          width={26}
+          height={26}
+          alt="menu"
+          className=" cursor-pointer"
+        />
+      </div>
       <nav
         className={`${
-          state == true ? "active" : ""
-        } inline-flex md:hidden p-4 rounded-md menu  flex-col items-center justify-between gap-5`}
+          state == true ? "block" : "hidden"
+        } inline-flex md:hidden p-4  flex-col items-center justify-between gap-5 absolute top-0 left-0 bg-gray-500 w-full z-[1]`}
       >
+        <div onClick={handleClick} className="absolute top-6 right-10 ">
+          <Image
+            src={"/close.png"}
+            width={26}
+            height={26}
+            alt="menu"
+            className=" cursor-pointer"
+          />
+        </div>
         <ul className="flex items-center flex-col justify-center gap-3">
-          <li className="font-semibold text-2xl hover:text-black text-gray-700 ">
-            <Link href="/Products">Products</Link>
+          <li
+            onClick={handleClick}
+            className="font-semibold text-2xl hover:text-black text-gray-700 "
+          >
+            <Link href="/#allProduct">All Products</Link>
           </li>
-          <li className="font-semibold text-2xl hover:text-black text-gray-700">
-            <Link href="/about">About</Link>
+          <li
+            onClick={handleClick}
+            className="font-semibold text-2xl hover:text-black text-gray-700"
+          >
+            <Link href="/#services">Services</Link>
           </li>
-          <li className="font-semibold text-2xl hover:text-black text-gray-700">
-            <Link href="/contact">Contact</Link>
+          <li
+            onClick={handleClick}
+            className="font-semibold text-2xl hover:text-black text-gray-700"
+          >
+            <Link href="/#contact">Contact</Link>
           </li>
         </ul>
-        <div className="">
+        <Search />
+        <div className="" onClick={handleClick}>
           <Link href="/">
             <Image
               src="/wady_logo.png"
