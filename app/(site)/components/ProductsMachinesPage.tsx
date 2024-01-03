@@ -11,6 +11,11 @@ async function Products({ items, name }: props) {
       <h1 className="text-[40px] md:text-[80px] lg:text-[130px] font-bold text-center">
         {name}
       </h1>
+      {items.length !== 0 ? (
+        <>Items({items.length}) found</>
+      ) : (
+        <> Ops, no items founded</>
+      )}
       <div className="container mx-auto flex flex-col lg:flex-row justify-center items-stretch gap-8 px-4  flex-wrap">
         {items.map((item) => (
           <div

@@ -6,8 +6,8 @@ function HorizontalScrolling() {
   return (
     <LazyMotion features={domAnimation}>
       <m.section
-        initial={{ filter: "blur(8px)", opacity: 0 }}
-        animate={{ filter: "blur(0px)", opacity: 1 }}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
         transition={{
           duration: 1,
           type: "spring",

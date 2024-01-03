@@ -9,7 +9,7 @@ function DropDown() {
     setState(!state);
   };
   return (
-    <div className="md:hidden">
+    <div className="lg:hidden">
       <div className="pr-6" onClick={handleClick}>
         <Image
           src={"/menu.png"}
@@ -22,7 +22,7 @@ function DropDown() {
       <nav
         className={`${
           state == true ? "block" : "hidden"
-        } inline-flex md:hidden p-4  flex-col items-center justify-between gap-5 absolute top-0 left-0 bg-gray-500 w-full z-[1]`}
+        } inline-flex lg:hidden p-4  flex-col items-center justify-between gap-5 absolute top-0 left-0 bg-gray-500 w-full z-[1] pt-[60px]`}
       >
         <div onClick={handleClick} className="absolute top-6 right-10 ">
           <Image
@@ -33,6 +33,7 @@ function DropDown() {
             className=" cursor-pointer"
           />
         </div>
+        <Search setState={setState} />
         <ul className="flex items-center flex-col justify-center gap-3">
           <li
             onClick={handleClick}
@@ -53,7 +54,6 @@ function DropDown() {
             <Link href="/#contact">Contact</Link>
           </li>
         </ul>
-        <Search />
         <div className="" onClick={handleClick}>
           <Link href="/">
             <Image

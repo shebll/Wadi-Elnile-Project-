@@ -39,22 +39,45 @@ function ProductMachinePage({ product }: props) {
       )}
 
       <div className="flex gap-4 flex-col">
-        <h1 className="text-3xl md:text-5xl font-bold uppercase ">
-          Specifications
-        </h1>
-        <hr />
-        <div className="text-lg  py-4 flex flex-col gap-6">
-          <PortableText value={product.content} />
-        </div>
+        {product.description && (
+          <>
+            <h1 className="text-3xl md:text-5xl font-bold uppercase ">
+              full description
+            </h1>
+            <hr />
+            <div className="text-lg  py-4 flex flex-col gap-6">
+              {product.description}
+            </div>
+          </>
+        )}
       </div>
       <div className="flex gap-4 flex-col">
-        <h1 className="text-3xl md:text-5xl font-bold uppercase "> features</h1>
-        <hr />
-        <div className="text-lg  py-4 flex flex-col gap-6 ">
-          <PortableText value={product.features} />
-        </div>
-        <Images product={product} />
+        {product.content && (
+          <>
+            <h1 className="text-3xl md:text-5xl font-bold uppercase ">
+              Specifications
+            </h1>
+            <hr />
+            <div className="text-lg  py-4 flex flex-col gap-6">
+              <PortableText value={product.content} />
+            </div>
+          </>
+        )}
       </div>
+      <div className="flex gap-4 flex-col">
+        {product.features && (
+          <>
+            <h1 className="text-3xl md:text-5xl font-bold uppercase ">
+              features
+            </h1>
+            <hr />
+            <div className="text-lg  py-4 flex flex-col gap-6 ">
+              <PortableText value={product.features} />
+            </div>
+          </>
+        )}
+      </div>
+      <Images product={product} />
     </div>
   );
 }

@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   title: "Admin Page",
   description: "admin page",
   icons: {
-    icon: "/logo.png",
+    icon: "/favicon.png",
   },
 };
 

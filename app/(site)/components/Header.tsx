@@ -20,14 +20,14 @@ function Header() {
               alt="logo image"
               loading="lazy"
               width={200}
-              height={60}
+              height={44}
               className="object-contain "
             ></Image>
           </Link>
           <div className="hidden lg:block">
             <Search />
           </div>
-          <nav className="hidden md:inline-flex">
+          <nav className="hidden lg:inline-flex">
             <ul className="flex gap-6 items-center">
               <li className="font-semibold text-2xl hover:text-black text-gray-700 ">
                 <Link href="/#allProduct">Products & Machines </Link>
@@ -36,7 +36,7 @@ function Header() {
                 <Link href="/#services">Services</Link>
               </li>
               <li className="font-semibold text-2xl hover:text-black text-gray-700">
-                <Link href="/contact">Contact</Link>
+                <Link href="/#contact">Contact</Link>
               </li>
             </ul>
           </nav>
