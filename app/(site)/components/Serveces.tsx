@@ -5,7 +5,7 @@ import { LazyMotion, domAnimation, m } from "framer-motion";
 
 function Services() {
   return (
-    <section id="services" className="container mx-auto min-h-screen ">
+    <section id="services" className="container mx-auto min-h-screen pt-[70px]">
       <LazyMotion features={domAnimation}>
         <m.div
           initial={{ y: -150 }}
@@ -20,40 +20,6 @@ function Services() {
         </m.div>
       </LazyMotion>
       <div className="row">
-        <div className="column">
-          <div className="card">
-            <div className="icon-wrapper">
-              <Image
-                src={"/services-1.png"}
-                width={60}
-                height={60}
-                alt="services"
-              />
-            </div>
-            <h3>Service Heading</h3>
-            <p>
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quisquam
-              consequatur necessitatibus eaque.
-            </p>
-          </div>
-        </div>
-        <div className="column">
-          <div className="card">
-            <div className="icon-wrapper">
-              <Image
-                src={"/services-2.png"}
-                width={60}
-                height={60}
-                alt="services"
-              />
-            </div>
-            <h3>Service Heading</h3>
-            <p>
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quisquam
-              consequatur necessitatibus eaque.
-            </p>
-          </div>
-        </div>
         <div className="column">
           <div className="card">
             <div className="icon-wrapper">

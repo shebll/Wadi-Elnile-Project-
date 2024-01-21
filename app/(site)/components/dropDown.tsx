@@ -57,7 +57,7 @@ function DropDown() {
         <div className="" onClick={handleClick}>
           <Link href="/">
             <Image
-              src="/wady_logo.png"
+              src="/wady_logos.png"
               alt="logo image"
               loading="lazy"
               width={200}
