@@ -42,12 +42,7 @@ async function Products({ items, name }: props) {
                 </div>
                 <div className=" text-gray-500">{item.description}</div>
               </div>
-              <Link
-                href={`/${name.split(" ")[1].toLowerCase().slice(0, -1)}/${
-                  item._id
-                }`}
-                className="btn-more"
-              >
+              <Link href={`/${item.category}/${item._id}`} className="btn-more">
                 See More
               </Link>
             </div>

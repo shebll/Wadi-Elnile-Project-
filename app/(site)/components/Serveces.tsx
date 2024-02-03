@@ -3,6 +3,33 @@ import Image from "next/image";
 import React from "react";
 import { LazyMotion, domAnimation, m } from "framer-motion";
 
+const servicesData = [
+  {
+    name: "Service Heading",
+    content:
+      "Lorem ipsum dolor, sit amet consectetur adipisicing elit.Quisquam consequatur necessitatibus eaque.",
+  },
+  {
+    name: "Service Heading",
+    content:
+      "Lorem ipsum dolor, sit amet consectetur adipisicing elit.Quisquam consequatur necessitatibus eaque.",
+  },
+  {
+    name: "Service Heading",
+    content:
+      "Lorem ipsum dolor, sit amet consectetur adipisicing elit.Quisquam consequatur necessitatibus eaque.",
+  },
+  {
+    name: "Service Heading",
+    content:
+      "Lorem ipsum dolor, sit amet consectetur adipisicing elit.Quisquam consequatur necessitatibus eaque.",
+  },
+  {
+    name: "Service Heading",
+    content:
+      "Lorem ipsum dolor, sit amet consectetur adipisicing elit.Quisquam consequatur necessitatibus eaque.",
+  },
+];
 function Services() {
   return (
     <section id="services" className="container mx-auto min-h-screen pt-[70px]">
@@ -18,77 +45,32 @@ function Services() {
             Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quisquam
           </p>
         </m.div>
+
+        <div className="row">
+          {servicesData.map((service, i) => (
+            <m.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.6, delay: i * 0.2 + 0.5 }}
+              key={i}
+              className="column"
+            >
+              <div className="card">
+                <div className="icon-wrapper">
+                  <Image
+                    src={`/services-${i + 1}.png"`}
+                    width={60}
+                    height={60}
+                    alt="services"
+                  />
+                </div>
+                <h3>{service.name}</h3>
+                <p>{service.content}</p>
+              </div>
+            </m.div>
+          ))}
+        </div>
       </LazyMotion>
-      <div className="row">
-        <div className="column">
-          <div className="card">
-            <div className="icon-wrapper">
-              <Image
-                src={"/services-3.png"}
-                width={60}
-                height={60}
-                alt="services"
-              />
-            </div>
-            <h3>Service Heading</h3>
-            <p>
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quisquam
-              consequatur necessitatibus eaque.
-            </p>
-          </div>
-        </div>
-        <div className="column">
-          <div className="card">
-            <div className="icon-wrapper">
-              <Image
-                src={"/services-4.png"}
-                width={60}
-                height={60}
-                alt="services"
-              />
-            </div>
-            <h3>Service Heading</h3>
-            <p>
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quisquam
-              consequatur necessitatibus eaque.
-            </p>
-          </div>
-        </div>
-        <div className="column">
-          <div className="card">
-            <div className="icon-wrapper">
-              <Image
-                src={"/services-5.png"}
-                width={60}
-                height={60}
-                alt="services"
-              />
-            </div>
-            <h3>Service Heading</h3>
-            <p>
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quisquam
-              consequatur necessitatibus eaque.
-            </p>
-          </div>
-        </div>
-        <div className="column">
-          <div className="card">
-            <div className="icon-wrapper">
-              <Image
-                src={"/services-6.png"}
-                width={60}
-                height={60}
-                alt="services"
-              />
-            </div>
-            <h3>Service Heading</h3>
-            <p>
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quisquam
-              consequatur necessitatibus eaque.
-            </p>
-          </div>
-        </div>
-      </div>
     </section>
   );
 }
